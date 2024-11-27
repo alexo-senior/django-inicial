@@ -1,0 +1,25 @@
+
+{%comment%}
+por medio de las llaves, porcentajes y load ststic cargamos el css eststico
+{%endcomment%}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%comment%}
+    para cargar el archivo css estatico hacemos las llaves doble
+    porcentaje especificamos que es un archivo estatico y luego 
+    el nombre del archivo que creamos en la carpeta style.
+    {%endcomment%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>esta es un prueba de archivo estatico css</h1>
+
+</body>
+</html>

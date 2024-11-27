@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Django</title>
+</head>
+<body><!--obtener todos los autores que contienen en su nombre la palabra yes-->
+    <h3>obtener todos los autores que contienen en su nombre la palabra yes</h3>
+    <ul>
+        {% for elm in filtereds3 %}
+            <li>{{ elm.name }}</li>
+        {% endfor %}
+    </ul>
+    
+    <!--buscando elementos cuyo id sea menor o igua a 15-->
+    <h3>Buscando elementos cuyo id sea menor o igual a 15</h3>
+    <ul>
+        {% for elm in filtereds2 %}
+            <li>{{ elm.email }}</li>
+        {% endfor %}
+    </ul>
+    <!-- en este ejemplo mostrar los elementos ordenados por email-->
+    
+    <h3>elementos ordenados por email/h3>
+    <ul>
+        {% for order in orders %}
+        <li>
+            {{ order.email }}
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    <!--En esta busqueda saltamos los cinco primeros resultados 
+    y extraemos los cinco siguientes -->
+
+    
+    <h3>Busqueda limitada con offset</h3>
+    <ul>
+        {% for ofset in offsets %}
+    </ul>
+        <li> {{ ofset.email }}</li>
+        {% endfor %}
+
+    <h3>Obteniendo los 10 primeros emails</h3>
+    <ul>
+        {% for limit in limits %}
+            <li> {{ limit.email }}</li>
+        {% endfor%}
+    </ul>
+    <!--Esta vez hacemos un filtrado unico por id, y no le colocamos
+    ninguna condicion adicional, pero lo podemos hacer si queremos
+    ejemplo se puede colocar author.email y nos dara el email del
+    authot con el id uno(1) de la base de datos-->
+
+    <h3>obteniendo un unico elemento (filtrado por id)</h3>
+    <p>{{author}}</p> 
+
+    <!--para hacer una consulta filtrada por ejemplo de un nombre y el email
+    hacemos de nuevo el ciclo for y dentro del ciclo una lista, aunque sepamos
+    que no seran muchos resultados, y luego un li corchetes docles con el o los dato que 
+    estamos filtrando-->
+
+    <h3>Buscando autor donde email = alejandra87@example.com</h3>
+    <ul>
+        {% for elm in filtered %}
+            <li>{{ elm.name }} | {{ elm.email }}</li>
+        {% endfor %}
+    </ul>
+    <!--
+para pintarlo en html colocamos un titulo en h3 
+hacemos una lista ul,con un ciclo for entre porcentajes y corchetes
+luego colocamos un li para acceder a la informacion con corchetes
+el nombre la variable o el objeto punto name que es el dato que queremos
+si queremos el email adicional entre parentesis, colocamoe el parentesis
+despues del corchete y dentro de corchetes author.email
+debemos cerrar el for 
+-->
+
+    <h1>Todos los Autores de obras</h1>
+    <ul>
+        {% for author in authors %}
+        <li>
+            {{ author.name }} ({{ author.email }})
+        </li>
+
+        {% endfor %}
+    </ul>
+    <h3>Total de Autores: {{ authors|length }}</h3>
+
+
+</body>
+</html>
+

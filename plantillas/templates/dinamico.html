@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola señor programador {{name}}</h1>
+    <h3>Categorias</h3>
+    {% comment %}
+        en la parte inferior recorremos las categorias y las pintamos.
+        en caso de ser code, la categoria se muestra en negrita.
+    {% endcomment %}
+
+    <ul>
+        {% for category in categorias %}
+        {%if category == 'codigo' %}
+
+        <li><b>{{ category|upper }}</b></li>
+    {% else %}
+        <li>{{ category }}</li>
+    {% endif %}
+    {% comment %}
+    hacer un filtro, esta vez con las categorias, siempre se 
+    coloca un doble parentesis y dentro la barra vertical antes de la funcion
+    con los filtros se pueden hacer muchas modificaciones a codigo citado.
+    {% endcomment %}
+    
+    {% endfor %}
+    <h5>Total de categorias: {{categorias|length}}</h5>
+    
+
+    </ul>
+        
+
+            
+    
+
+
+    
+</body>
+</html>
+
+
+
