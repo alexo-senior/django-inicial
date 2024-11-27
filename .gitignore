@@ -1,0 +1,22 @@
+# Archivos de Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Archivos de Django
+*.log
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Archivos de configuración
+*.env
+*.local
+*.secret
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
