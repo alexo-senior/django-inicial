@@ -1,0 +1,22 @@
+
+<!-- se usa un form action,incluir rutas en action no es limpio
+eso pero solo si no se construye en el path, los method se usan  pero 
+nunca se coloca informacion sensible alli ya que es vulnerable
+de manera que si hay algun cambio en el nombre de la ruta se hace por el path-->
+
+<!-- a traves del metodo get va enviardatso como name y mensaje 
+como texto a al ulr goal y esta url va a recepcionar los datos 
+en su vista goal y devuelve la respuesta correspondiente a
+la vista success.html-->
+
+<form action="{% url 'goal' %}" method="GET">
+    <h3>Formulario de contacto</h3>
+    <label for=""> nombre: </label>
+    <input type="text" name="name" placeholder="Escribe tu nombre">
+    <label for=""> Comentario: </label>
+    <input type="text" name="message" placeholder="Escribe tu comentario">
+    <input type="submit" value="Enviar">
+
+    
+</form>
+
