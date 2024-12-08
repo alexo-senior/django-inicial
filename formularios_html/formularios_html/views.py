@@ -23,6 +23,9 @@ def getgoal(request):
     name = request.GET['name']    
     return render(request,'success.html',{'name':name})
 
+
+#---------FORMULARIO POST----------------
+
 #esta vista maneja las soslicitudes http a la ruta asociada (/post/form)
 #renderiza la plantilla postform.html, muestra un formulario post
 def postform(request):
