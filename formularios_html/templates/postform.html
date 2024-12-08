@@ -1,0 +1,22 @@
+
+<!--muestra una pagina con un encabezzado h1 que dice "POST FORM"
+incluye el contenido de otra plantilla (forms/create.html) usando include 
+esto permite reutilizar codigo en diferentes plantillas
+nota: no usar ni siquiera en comentarios codigo igual al original
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario POST</title>
+</head>
+<body>
+    <h1>POST FORM</h1>
+    <hr>
+    {% include "forms/create.html" %}
+</body>
+</html>
+
+
+

@@ -1,0 +1,16 @@
+
+<!--Define un formulario HTML que enviará 
+una solicitud de tipo POST a la URL asociada
+con el nombre de ruta 'postgoal'.
+La etiqueta url postgoal genera dinámicamente
+la URL correspondiente a la vista postgoal definida en urls.py.
+    -->
+    <form action="{% url 'postgoal' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="info" placeholder="Escribe algo aquí">
+        <input type="submit" value="Enviar">
+    </form>
+    
+
+
+
