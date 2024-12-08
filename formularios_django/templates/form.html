@@ -1,0 +1,57 @@
+<!--
+el formulario se puede pintar en un estilo de parrafo
+para eso colocamos .as_p y eso coloca ordenadamente
+las entradas, tambien se puede colocar as_table y eso 
+lo ordena como una tabla, son solo etiquetas para encerrar
+los diferentes valores de los formularios.
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Django</h1>
+    <hr>
+    <table>
+        <form action="{% url 'goal' %}" method="GET">
+            {{ comment_form.as_table }}
+            <input type="Submit" value="Enviar">
+
+        </form>
+        
+    
+</table>
+</body>
+</html>
+-->
+<!--METODO POST-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Django</h1>
+    <hr>
+    <table>
+        <form action="{% url 'goal' %}" method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_table }}
+            <input type="Submit" value="Enviar">
+
+        </form>
+        
+    
+</table>
+</body>
+</html>
+
+
