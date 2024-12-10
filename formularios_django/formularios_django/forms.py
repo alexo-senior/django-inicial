@@ -14,15 +14,24 @@ class CommentForm(forms.Form):
         'class':'btn btn-primary'
     }))
     
-#ejemplo de como se hace el boton en el formulario de django
+# arriba ejemplo de como se hace el boton en el formulario de django
 #en lugar de hacerlo en el template de html
+
+#----------FORMULARIO EN DJANGO PARA DARLE ESTILO CON CSS---------
+
+#formulario de informacion de contacto
+#por medio de widget le podemos agregar estilo al formulario
+#pero ya en el html, widget.html
+#esto es porque ya se le atribye un nobre de clase input
+class ContacForm(forms.Form):
+    name = forms.CharField(label="Nmbre",max_length=50, widget=forms.TextInput(attrs={'class':'input'}))
+    email = forms.EmailField(label="Email",max_length=50)
+    message = forms.CharField(label="Message")
     
     
 
-class ContacForm(forms.Form):
-    name = forms.CharField(label="Nmbre",max_length=50)
-    email = forms.EmailField(label="Email",max_length=50)
-    message = forms.CharField(label="Message")
+    
+    
     
     
     

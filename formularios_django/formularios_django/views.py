@@ -56,6 +56,8 @@ def widget(request):
     form = ContacForm()
     return render(request,'widget.html', {'form':form} )
     #return HttpResponse("Exito")
+    
+    
 
 
 
