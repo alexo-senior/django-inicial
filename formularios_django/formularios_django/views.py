@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import CommentForm
+from .forms import CommentForm, ContacForm
 
 
 def form(request):
@@ -52,6 +52,13 @@ def goal(request):
     """
 
 
-    
+def widget(request):
+    form = ContacForm()
+    return render(request,'widget.html', {'form':form} )
+    #return HttpResponse("Exito")
+
+
+
+
     
     

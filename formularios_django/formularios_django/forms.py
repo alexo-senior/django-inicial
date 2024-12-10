@@ -18,6 +18,15 @@ class CommentForm(forms.Form):
 #en lugar de hacerlo en el template de html
     
     
+
+class ContacForm(forms.Form):
+    name = forms.CharField(label="Nmbre",max_length=50)
+    email = forms.EmailField(label="Email",max_length=50)
+    message = forms.CharField(label="Message")
+    
+    
+    
+    
     
     
     
