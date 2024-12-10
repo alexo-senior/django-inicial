@@ -45,7 +45,7 @@ los diferentes valores de los formularios.
         <form action="{% url 'goal' %}" method="POST">
             {% csrf_token %}
             {{ comment_form.as_table }}
-            <input type="Submit" value="Enviar">
+        <!--<input type="Submit" value="Enviar">-->    
 
         </form>
         
@@ -53,5 +53,6 @@ los diferentes valores de los formularios.
 </table>
 </body>
 </html>
+
 
 

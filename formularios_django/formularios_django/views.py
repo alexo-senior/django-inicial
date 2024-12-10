@@ -25,7 +25,7 @@ def form(request):
     if request.method != "GET":
         return HttpResponse("Metodo no permitido")
     return HttpResponse(request.GET['name'])
-    #return HttpResponse("Recibido")
+    return HttpResponse("Recibido")
 """
 #-------METODO POST---------------
 
@@ -40,7 +40,7 @@ def goal(request):
     1:como puedo validar los datos de una forma eficiente
     
     2:como puedo personalizar el contenido mostrado al mismo
-    grado del formulario html
+    grado que se puede hacer en el formulario html
     
     3:como personalizar las validaciones
     
@@ -48,8 +48,9 @@ def goal(request):
     de un formulario en python es muy similar a la de un modelo,
     existe alguna forma para no tener que duplicar el contenido
     que estoy creando  y de unica vez a partir del modelo se genere
-    un formulario, sin tner que escribir desde cero
+    el formulario, sin tner que escribir desde cero
     """
+
 
     
     
