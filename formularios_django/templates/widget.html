@@ -1,4 +1,10 @@
-
+<!--La etiqueta de style se creo dentro del codigo directamente 
+para no hacer archivo de tipo style , aunque no es buena practica
+dentro del hr de cra un table para un form action enre las 
+comillas se pasa en llaves porcentaje  la url de widget entre comillas
+y el method que sea igual al tipo de llamada este caso es post, siempre
+se le pasa la seguridad, y uego mas abajo entre doble comillas formpunto
+as table-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +21,18 @@
     <h1>Formulario Django</h1>
     <hr>
     <table>
-        <form action="{% url 'widget' %}" method="POST">
+        <form action="{% url 'widget' %}" method="POST" style="width: 400px;">
             {% csrf_token %}
             {{ form.as_table }}
-        <!--<input type="Submit" value="Enviar">-->    
-
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Enviar" style="margin-top: 5px;"> 
+                </td>
+            </tr>
         </form>
-        
-    
-</table>
+    </table>
 </body>
 </html>
+
+
 

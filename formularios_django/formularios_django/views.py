@@ -9,7 +9,9 @@ def form(request):
     #estos coemntarios aparecen ya rellenados en el formulario web
     comment_form = CommentForm()
     #comment_form = CommentForm({'name':'Alexis','url':'http://open-bootcamp.com', 'comment':'comentario'})
-    #le pasamos el contexto a la funcion 
+    
+    #le pasamos el contexto a la funcion
+    
     return render(request, 'form.html', {'comment_form':comment_form})
     #return HttpResponse("sitio en construccion")
 
@@ -50,12 +52,32 @@ def goal(request):
     que estoy creando  y de unica vez a partir del modelo se genere
     el formulario, sin tner que escribir desde cero
     """
+#REESTRUCTURAR LA VISTA PARA QUE RECIBA GET Y POST A A LA VEZ
+#creamos un formulario igual que en get, pero con post y que se cree con todos los datos
+#recibidos, si es correcto da el mensaje correcto, sino se ejecuta el else
+# views.py
 
 
 def widget(request):
-    form = ContacForm()
-    return render(request,'widget.html', {'form':form} )
-    #return HttpResponse("Exito")
+    if request.method == 'GET':
+        form = ContacForm()
+        return render(request, 'widget.html', {'form': form})
+    
+    if request.method == 'POST':
+        form = ContacForm(request.POST)
+        if form.is_valid():
+            #print("Datos validos:", form.cleaned_data)
+            return HttpResponse("Esta es una validacion post correcta")
+        else:
+            #print("Errores del formulario:", form.errors)
+            return render(request, 'widget.html', {'form': form})
+            #return HttpResponse("No valido")
+            
+            
+
+    
+
+        
     
     
 
