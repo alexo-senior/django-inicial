@@ -37,7 +37,7 @@ def goal(request):
     return HttpResponse(request.POST['name'])
     #return HttpResponse("Recibido")
     
-    """
+"""
     PREGUNTAS QUE PUEDEN SURGIR:
     1:como puedo validar los datos de una forma eficiente
     
@@ -52,6 +52,7 @@ def goal(request):
     que estoy creando  y de unica vez a partir del modelo se genere
     el formulario, sin tner que escribir desde cero
     """
+    
 #REESTRUCTURAR LA VISTA PARA QUE RECIBA GET Y POST A A LA VEZ
 #creamos un formulario igual que en get, pero con post y que se cree con todos los datos
 #recibidos, si es correcto da el mensaje correcto, sino se ejecuta el else
@@ -59,6 +60,7 @@ def goal(request):
 
 
 def widget(request):
+    """funcion para widget"""
     if request.method == 'GET':
         form = ContacForm()
         return render(request, 'widget.html', {'form': form})
@@ -72,6 +74,7 @@ def widget(request):
             #print("Errores del formulario:", form.errors)
             return render(request, 'widget.html', {'form': form})
             #return HttpResponse("No valido")
+            
             
             
 
